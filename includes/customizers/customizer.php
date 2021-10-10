@@ -1,6 +1,6 @@
 <?php
 
-function awqv_customize_register( $wp_customize ) {
+function awqv_lite_customize_register( $wp_customize ) {
 	require_once ( awqv_lite_dir(). '/toggle-control/class-customizer-toggle-control.php' );
 	require_once ( awqv_lite_dir(). '/separator-control/class-separator-control.php' );
 	require_once ( awqv_lite_dir(). '/upsell-inner-section-control/class-upsell-inner-section-control.php' );
@@ -448,4 +448,4 @@ function awqv_customize_register( $wp_customize ) {
   );
 
 }
-add_action( 'customize_register', 'awqv_customize_register' );
+add_action( 'customize_register', 'awqv_lite_customize_register' );

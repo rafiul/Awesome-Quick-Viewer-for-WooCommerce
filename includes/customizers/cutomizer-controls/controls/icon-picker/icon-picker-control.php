@@ -1,6 +1,6 @@
 <?php
  
-function awqv_add_icon_picker_control( $wp_customize ) {
+function awqv_lite_add_icon_picker_control( $wp_customize ) {
 	class awqv_Customizer_Icon_Picker_Control extends WP_Customize_Control {
 
 		public $type = 'awqv-icon-picker';
@@ -49,4 +49,4 @@ function awqv_add_icon_picker_control( $wp_customize ) {
 	
 }
 
-add_action( 'customize_register', 'awqv_add_icon_picker_control' );
+add_action( 'customize_register', 'awqv_lite_add_icon_picker_control' );
