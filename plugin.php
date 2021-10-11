@@ -58,7 +58,7 @@ if (!defined( 'ABSPATH')) exit;
 		<?php
 		ob_start();
 		
-		include_once( 'includes/qv-content.php' );
+		include_once( 'includes/awqv-content.php' );
 		
 		echo ob_get_clean();
 		
@@ -66,7 +66,7 @@ if (!defined( 'ABSPATH')) exit;
 		die();
 	}
 	public static function awqv_image() {
-		include_once('includes/qv-image.php');
+		include_once('includes/awqv-image.php');
 	}
 	 public function awqv_modal(){
 		 $icon = get_option( 'awqv_icon_picker', '' );

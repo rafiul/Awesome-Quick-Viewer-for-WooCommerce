@@ -83,8 +83,8 @@ function awqv_lite_assets_path(){
 }
  
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-	require_once AWQV_LITE_DIR .'/awqv.php';
+	require_once AWQV_LITE_DIR .'/plugin.php';
 	require_once ( awqv_lite_dir() .'/icon-picker/icon-picker-control.php' );
 	require_once AWQV_LITE_INC_DIR .'/customizers/customizer.php';
-	require_once AWQV_LITE_INC_DIR .'/qv-style.php';
+	require_once AWQV_LITE_INC_DIR .'/awqv-style.php';
 }
