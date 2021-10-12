@@ -435,7 +435,7 @@ function awqv_customize_register( $wp_customize ) {
          array(
              'label'      => __( 'View Cart Button', 'awqv' ), 
 			 'description'=> __('View Cart Background', 'awqv'),
-             'section'    => 'awqv_add_to_cart_section',  
+             'section'    => 'awqv_add_to_cart_section',
              'settings'   => 'awqv_view_cart_button_bg'
          )
     )

@@ -8,8 +8,8 @@ class AWQV_Customizer_Range_Value_Control extends \WP_Customize_Control {
 	 * @since 3.4.0
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'customizer-range-control', $this->awqv_controller_path(). '/range-control/js/customizer-range-value-control.js' ), array( 'jquery' ), rand(), true );
-		wp_enqueue_style( 'customizer-range-control', $this->awqv_controller_path() . '/range-control/css/customizer-range-value-control.css' ), array(), rand() );
+		wp_enqueue_script( 'customizer-range-control-js', $this->awqv_controller_path() . '/range-control/js/customizer-range-value-control.js', array( 'jquery' ), '1.0', true );
+		wp_enqueue_style( 'customizer-range-control-css', $this->awqv_controller_path() . '/range-control/css/customizer-range-value-control.css' , array(), rand() );
 	}
 
 	/**

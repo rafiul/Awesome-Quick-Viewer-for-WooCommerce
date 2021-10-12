@@ -30,10 +30,9 @@ function awqv_icon_list() {
 		//View 
 		'awqv-icon-eye'				=> 'awqv-icon-eye',
 		'awqv-icon-viewer'			=> 'awqv-icon-viewer',
-		'awqv-icon-file'			=> 'awqv-icon-file'
-		'awqv-icon-search'			=> 'awqv-icon-search'
+		'awqv-icon-file'			=> 'awqv-icon-file',
+		'awqv-icon-search'			=> 'awqv-icon-search',
 		'awqv-icon-eye-outline'	   	=> 'awqv-icon-eye-outline'
-		
 		
 	);
 	return $icons;
