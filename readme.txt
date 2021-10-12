@@ -1,4 +1,4 @@
-=== Awesome Quick Viewer for WooCommerce  ===
+=== Awesome Quick Viewer for WooCommerce Lite  ===
 Contributors: tbyte,rafiul17
 Donate link: https://www.paypal.com/donate?hosted_button_id=ZC2N2PY77T9HL
 Tags: WooCommerce, quick view,viewer,free quick view, ProductsQuickView

@@ -1,6 +1,6 @@
 <?php
  
-function awqv_lite_add_icon_picker_control( $wp_customize ) {
+function awqv_add_icon_picker_control( $wp_customize ) {
 	class awqv_Customizer_Icon_Picker_Control extends WP_Customize_Control {
 
 		public $type = 'awqv-icon-picker';
@@ -19,14 +19,14 @@ function awqv_lite_add_icon_picker_control( $wp_customize ) {
 		public function enqueue() {
 			//declare assets path
 			$assets_path = AWQV_PATH . '/includes/customizers/cutomizer-controls/controls/icon-picker/assets';
-			wp_enqueue_script( 'awqv-icon-picker-ddslick-min', awqv_lite_assets_path() . '/icon-picker/assets/js/jquery.ddslick.min.js', array( 'jquery' ) );
-			wp_enqueue_script( 'awqv-icon-picker-control', awqv_lite_assets_path() . '/icon-picker/assets/js/icon-picker-control.js', array( 'jquery', 'awqv-icon-picker-ddslick-min' ), '', true );
+			wp_enqueue_script( 'awqv-icon-picker-ddslick-min', Awqv_Lite_Plugin::awqv_assets_path() . '/icon-picker/assets/js/jquery.ddslick.min.js', array( 'jquery' ) );
+			wp_enqueue_script( 'awqv-icon-picker-control', Awqv_Lite_Plugin::awqv_assets_path() . '/icon-picker/assets/js/icon-picker-control.js', array( 'jquery', 'awqv-icon-picker-ddslick-min' ), '', true );
 			wp_enqueue_style( 'awqv-icon', $assets_path . '/css/fontello.css' );
 		}
 
 		public function render_content() {
 			if ( empty( $this->choices ) ) {
-				require_once awqv_lite_dir() . '/icon-picker/inc/awqv-icons.php';
+				require_once awqv_dir() . '/icon-picker/inc/awqv-icons.php';
 				$this->choices = awqv_icon_list();
 			}
 		?>
@@ -49,4 +49,4 @@ function awqv_lite_add_icon_picker_control( $wp_customize ) {
 	
 }
 
-add_action( 'customize_register', 'awqv_lite_add_icon_picker_control' );
+add_action( 'customize_register', 'awqv_add_icon_picker_control' );

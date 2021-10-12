@@ -1,17 +1,16 @@
 <?php
-
-function awqv_lite_customize_register( $wp_customize ) {
-	require_once ( awqv_lite_dir(). '/toggle-control/class-customizer-toggle-control.php' );
-	require_once ( awqv_lite_dir(). '/separator-control/class-separator-control.php' );
-	require_once ( awqv_lite_dir(). '/upsell-inner-section-control/class-upsell-inner-section-control.php' );
-	require_once ( awqv_lite_dir(). '/slider-range-control/class-slider-range-control.php' );
-	require_once ( awqv_lite_dir(). '/customizer-animation.php' );
-	require_once ( awqv_lite_dir(). '/customizer-slider.php' );
+function awqv_customize_register( $wp_customize ) {
+	require_once ( Awqv_Lite_Plugin::awqv_dir(). '/toggle-control/class-customizer-toggle-control.php' );
+	require_once ( Awqv_Lite_Plugin::awqv_dir(). '/separator-control/class-separator-control.php' );
+	require_once ( Awqv_Lite_Plugin::awqv_dir(). '/upsell-inner-section-control/class-upsell-inner-section-control.php' );
+	require_once ( Awqv_Lite_Plugin::awqv_dir(). '/slider-range-control/class-slider-range-control.php' );
+	require_once ( Awqv_Lite_Plugin::awqv_dir(). '/customizer-animation.php' );
+	require_once ( Awqv_Lite_Plugin::awqv_dir(). '/customizer-slider.php' );
 	
 	/**
 	 * ************** Add panel **************
 	 */
-	    $panel = 'awqv_customizer_panel';
+	   $panel = 'awqv_customizer_panel';
 		$wp_customize->add_panel(  $panel, 
 			array(
 				'priority'       => 22,
@@ -53,8 +52,6 @@ function awqv_lite_customize_register( $wp_customize ) {
  		'priority'    => 10,
  		'panel'       => $panel,
  	) );
-	
-
 	/**
 		*************** Add Slider sections **************
 	 */
@@ -63,7 +60,6 @@ function awqv_lite_customize_register( $wp_customize ) {
  		'priority'    => 10,
  		'panel'       => $panel,
  	) );
-	
 	/**
 		*************** Add to cart button sections **************
 	 */
@@ -72,7 +68,6 @@ function awqv_lite_customize_register( $wp_customize ) {
  		'priority'    => 10,
  		'panel'       => $panel,
  	) );
-	
 	/** 
 		************** window Bg **************
 	**/
@@ -83,7 +78,6 @@ function awqv_lite_customize_register( $wp_customize ) {
         'default' => '#fff', // Give it a default
 		'sanitize_callback' => 'sanitize_hex_color',
 		'type' => 'option'
-
       )
 	);
 	$wp_customize->add_control(
@@ -448,4 +442,4 @@ function awqv_lite_customize_register( $wp_customize ) {
   );
 
 }
-add_action( 'customize_register', 'awqv_lite_customize_register' );
+add_action( 'customize_register', 'awqv_customize_register' );

@@ -1,14 +1,13 @@
 <?php
-
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function awqv_lite_customize_preview_js() {
+function awqv_customize_preview_js() {
 	wp_enqueue_script( 'awqv-customizer', AWQV_PATH . '/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
-add_action( 'customize_preview_init', 'awqv_lite_customize_preview_js' );
+add_action( 'customize_preview_init', 'awqv_customize_preview_js' );
 
-function awqv_lite_custom_css_output() {
+function awqv_custom_css_output() {
 	$padding_top 	=  get_option( 'btn_padding_top_bottom', '' );
 	$padding_left   = get_option( 'btn_padding_left_right', '' );
 	
@@ -70,4 +69,4 @@ function awqv_lite_custom_css_output() {
 		}
   </style>
 <?php }
-add_action( 'wp_head', 'awqv_lite_custom_css_output');
+add_action( 'wp_head', 'awqv_custom_css_output');
