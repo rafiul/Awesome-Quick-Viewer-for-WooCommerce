@@ -31,7 +31,7 @@ if (!function_exists('activate_awqv_lite'))
         require_once plugin_dir_path(__FILE__) . 'includes/class-activator.php';
         Awqv_Activator::activate();
         Awqv_Activator::set_plugin_info();
-        set_transient('awqv-thankyou-notice', true, 5);
+        set_transient('awqv-lite-thankyou-notice', true, 5);
     }
 }
 
@@ -40,14 +40,15 @@ register_activation_hook(__FILE__, 'activate_awqv_lite');
 add_action('admin_notices', 'awqv_lite_thankyou_notice');
 function awqv_lite_thankyou_notice()
 {
-    if (get_transient('awqv-thankyou-notice'))
+    if (get_transient('awqv-lite-thankyou-notice'))
     {
         $msg1 = 'Awesome Quick Viewer for WooCommerce Lite';
         $msg2 = 'Deactivated Awesome Quick Viewer for WooCommerce Pro while Lite is Activate.';
+        $msg3 = '<a class="button button-primary" href="'.wp_customize_url().'">Settings</a>';
 ?>
-		<div class="updated notice is-dismissible">
+		<div class="updated is-dismissible aep-notice">
 			<?php echo sprintf(__('<p>Thank you for using <strong>%s</strong>! 
-			<strong>%s</strong></p>', 'awqv' ),$msg1, $msg2); ?>
+			<strong>%s</strong></p><p>%s</p>', 'awqv' ),$msg1, $msg2, $msg3); ?>
 		</div>
   <?php
         delete_transient('awqv-admin-notice');
@@ -57,6 +58,7 @@ function awqv_lite_thankyou_notice()
 class Awqv_Lite_Plugin
 {
     public $version = '1.0';
+	static $plugin;
 
     function __construct()
     {
@@ -71,8 +73,13 @@ class Awqv_Lite_Plugin
             $this,
             'awqv_admin_style'
         ));
+		//Load 
         $this->awqv_load();
+		
+		// Initialize the filter hooks.
+		$this->init_filters();
     }
+	
     /**
      * Define constants
      *
@@ -121,6 +128,33 @@ class Awqv_Lite_Plugin
         wp_enqueue_script('perfect-scrollbar-js', AWQV_PATH . '/assets/js/perfect-scrollbar.min.js', AWQV_VERSION);
         wp_enqueue_script('custom-js', AWQV_PATH . '/assets/js/awqv-custom.js', AWQV_VERSION);
     }
+	/**
+	 * Add plugin action Filter
+	 */
+	public function init_filters() {
+		add_filter( 'plugin_action_links', array( $this, 'awqv_plugin_action_links' ), 10, 2 );
+	}
+	/**
+	 * Add plugin action menu
+	 *
+	 * @param array  $links
+	 * @param string $file
+	 *
+	 * @return array
+	 */
+	public function awqv_plugin_action_links( $links, $file ) {
+
+		if ( AWQV_BASE == $file ) {
+			$new_links = sprintf( '<a href="%s">%s</a>', wp_customize_url(), __( 'Settings', 'awqv' ) );
+
+			array_unshift( $links, $new_links );
+
+			$links['go_pro'] = sprintf( '<a target="_blank" href="%1$s" style="color: #00be28; font-weight: 700;">Go Premium!</a>', '#' );
+		}
+
+		return $links;
+	}
+ 
 
     /**
      * Admin Style
