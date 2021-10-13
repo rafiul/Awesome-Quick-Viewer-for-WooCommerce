@@ -122,9 +122,9 @@ class Awqv_Lite_Plugin
         wp_enqueue_style('awqv_css');
 
         wp_enqueue_script('jquery');
-        wp_enqueue_script('modal-box', AWQV_PATH . '/assets/js/modal-box.js', AWQV_VERSION);
-        wp_enqueue_script('owl-js', AWQV_PATH . '/assets/js/owl.carousel.min.js', AWQV_VERSION);
-        wp_enqueue_script('perfect-scrollbar-js', AWQV_PATH . '/assets/js/perfect-scrollbar.min.js', AWQV_VERSION);
+        wp_enqueue_script('awqv-modal-box', AWQV_PATH . '/assets/js/modal-box.js', AWQV_VERSION);
+        wp_enqueue_script('awqv-owl-js', AWQV_PATH . '/assets/js/owl.carousel.min.js', AWQV_VERSION);
+        wp_enqueue_script('awqv-perfect-scrollbar-js', AWQV_PATH . '/assets/js/perfect-scrollbar.min.js', AWQV_VERSION);
         wp_enqueue_script('custom-js', AWQV_PATH . '/assets/js/awqv-custom.js', AWQV_VERSION);
     }
 	/**
