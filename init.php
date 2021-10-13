@@ -42,13 +42,13 @@ function awqv_lite_thankyou_notice()
 {
     if (get_transient('awqv-lite-thankyou-notice'))
     {
-        $msg1 = 'Awesome Quick Viewer for WooCommerce Lite';
-        $msg2 = 'Deactivated Awesome Quick Viewer for WooCommerce Pro while Lite is Activate.';
-        $msg3 = '<a class="button button-primary" href="'.wp_customize_url().'">Settings</a>';
+        $msg_title = 'Awesome Quick Viewer for WooCommerce Lite';
+        $msg_text = 'Deactivated Awesome Quick Viewer for WooCommerce Pro while Lite is Activate.';
+        $settings = '<a class="button button-primary" href="'.wp_customize_url().'">Settings</a>';
 ?>
 		<div class="updated is-dismissible aep-notice">
 			<?php echo sprintf(__('<p>Thank you for using <strong>%s</strong>! 
-			<strong>%s</strong></p><p>%s</p>', 'awqv' ),$msg1, $msg2, $msg3); ?>
+			<strong>%s</strong></p><p>%s</p>', 'awqv' ),$msg_title, $msg_text, $settings); ?>
 		</div>
   <?php
         delete_transient('awqv-admin-notice');
@@ -75,7 +75,6 @@ class Awqv_Lite_Plugin
         ));
 		//Load Main
         $this->awqv_load();
-		
 		// Initialize the filter hooks.
 		$this->init_filters();
     }
