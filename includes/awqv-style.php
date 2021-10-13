@@ -23,9 +23,11 @@ function awqv_custom_css_output() {
 		.owl-theme .owl-dots .owl-dot:hover span{
 			background: <?php echo esc_attr(get_option( 'awqv_dot_color', '' ))  ;?>;
 		}
+		<?php if($padding_top!="" || $padding_left!="" ): ?>
 		.woocommerce .qv-description button.button.alt{
 			padding: <?php echo esc_attr($padding_top .'px' . " ". $padding_left .'px');?>
 		}
+		<?php endif;?>
 		.woocommerce .qv-description .added_to_cart.wc-forward{
 			padding: <?php echo esc_attr($padding_top .'px');?>
 		}
@@ -37,7 +39,7 @@ function awqv_custom_css_output() {
 	  }
 	  .woocommerce .qv-description button.button.alt, 
 	  .woocommerce-cart .qv-description button.button.alt{
-		  background: <?php echo esc_attr(get_option( 'awqv_cart_button_bg', '' ));?>
+		  background: <?php echo esc_attr(get_option( 'awqv_cart_button_bg', '#333' ));?>
 	  }
 	  .woocommerce .qv-description a.added_to_cart.wc-forward{
 		  background: <?php echo esc_attr(get_option( 'awqv_view_cart_button_bg', '' ));?>

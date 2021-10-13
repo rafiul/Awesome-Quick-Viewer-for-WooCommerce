@@ -309,13 +309,18 @@ input[type=number]
       transition: opacity 200ms ease;
       border-radius: 30px; }
     .awqv-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-      background: #4DC7A0; }
+      background: #333333;
+      }
 
 .awqv-theme .owl-dots {
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translate(-50%, -10%);
+}
+.awqv-theme .owl-nav .owl-next:before, .awqv-theme .owl-nav .owl-prev:before{
+	font-size:36px;
+	color: #333333;
 }
 .qv-description .minus, 
 .qv-description .plus,

@@ -11,9 +11,7 @@ class Awqv_Admin_Notice
      */
     public function __construct()
     {
-        if (get_option("awqv_notice") !=  "never_show") {
-            add_action("admin_notices", [$this, "notice_output"]);
-        }
+        $this->show_notification_on_time();
         add_action("admin_enqueue_scripts", [$this, "enqueue"]);
         add_action("wp_ajax_never_show", "never_show");
     }
@@ -73,6 +71,23 @@ class Awqv_Admin_Notice
         update_option("awqv_notice", "never_show");
     }
 	/**
+     * Notice show if condition meet
+     */
+	public function show_notification_on_time()
+	{
+		$notification_status= get_option("awqv_notice");
+		$get_install_date	= get_option('awqv_lite_activation_date');
+		$install_date		= date("Y-m-d", $get_install_date);
+
+		$date				= new DateTime($install_date);
+		$now 				= new DateTime();
+		$date_diff 			= $date->diff($now)->format("%d");
+		
+		if($date_diff>=1 && $notification_status!='never_show' ){
+			add_action("admin_notices", [$this, "notice_output"]);
+		}
+	}
+	/**
      * Notice Output
      */
     public function notice_output()
@@ -80,7 +95,7 @@ class Awqv_Admin_Notice
 	 <div class='notice aep-notice'>
         <div class="aep-notice-logo">
             <img src="<?php echo $this->plugin_path() .
-                "/img/notice-img"; ?>" >
+                "/img/notice-img.jpg"; ?>" >
         </div>
         <div class="aep-notice-content">
             <h3><?php self::notice_title(); ?></h3>

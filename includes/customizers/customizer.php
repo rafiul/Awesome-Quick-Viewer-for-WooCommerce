@@ -99,7 +99,7 @@ function awqv_customize_register( $wp_customize ) {
       'awqv_sale_flash_bg', //give it an ID
       array(
 		'transport' => 'postMessage',
-        'default' => '#111', // Give it a default
+        'default' => '#111111', // Give it a default
 		'sanitize_callback' => 'sanitize_hex_color',
 		'type' => 'option'
 
@@ -124,7 +124,7 @@ function awqv_customize_register( $wp_customize ) {
       'awqv_title_color', //give it an ID
       array(
 		'transport' => 'postMessage',
-        'default' => '#111', // Give it a default
+        'default' => '#111111', // Give it a default
 		'sanitize_callback' => 'sanitize_hex_color',
 		'type' => 'option'
 
@@ -149,7 +149,7 @@ function awqv_customize_register( $wp_customize ) {
       'awqv_desc_color', //give it an ID
       array(
 		'transport' => 'postMessage',
-        'default' => '#111', // Give it a default
+        'default' => '#111111', // Give it a default
 		'sanitize_callback' => 'sanitize_hex_color',
 		'type' => 'option'
       )
@@ -172,7 +172,7 @@ function awqv_customize_register( $wp_customize ) {
       'awqv_product_meta_color', //give it an ID
       array(
 		'transport' => 'postMessage',
-        'default' => '#111', // Give it a default
+        'default' => '#111111', // Give it a default
 		'sanitize_callback' => 'sanitize_hex_color',
 		'type' => 'option'
       )
@@ -195,7 +195,7 @@ function awqv_customize_register( $wp_customize ) {
       'awqv_product_meta_link_color', //give it an ID
       array(
 		'transport' => 'postMessage',
-        'default' => '#111', // Give it a default
+        'default' => '#111111', // Give it a default
 		'sanitize_callback' => 'sanitize_hex_color',
 		'type' => 'option'
       )
@@ -218,7 +218,7 @@ function awqv_customize_register( $wp_customize ) {
       'awqv_product_price_color', //give it an ID
       array(
 		'transport' => 'postMessage',
-        'default' => '#111', // Give it a default
+        'default' => '#111111', // Give it a default
 		'sanitize_callback' => 'sanitize_hex_color',
 		'type' => 'option'
       )
@@ -241,7 +241,7 @@ function awqv_customize_register( $wp_customize ) {
       'awqv_product_review_color', //give it an ID
       array(
 		'transport' => 'postMessage',
-        'default' => '#111', // Give it a default
+        'default' => '#111111', // Give it a default
 		'sanitize_callback' => 'sanitize_hex_color',
 		'type' => 'option'
       )
@@ -306,7 +306,7 @@ function awqv_customize_register( $wp_customize ) {
       'awqv_icon_color', //give it an ID
       array(
 		'transport' => 'postMessage',
-        'default' => '#111', // Give it a default
+        'default' => '#111111', // Give it a default
 		'sanitize_callback' => 'sanitize_hex_color',
 		'type' => 'option'
       )
@@ -352,7 +352,7 @@ function awqv_customize_register( $wp_customize ) {
   **/
 	$wp_customize->add_setting( 'btn_padding_top_bottom',
 		array(
-			'default' => 16,
+			'default' => '',
 			'transport' => 'postMessage',
 			'sanitize_callback' => '',
 			'type' => 'option'
@@ -374,7 +374,7 @@ function awqv_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_setting( 'btn_padding_left_right',
 		array(
-			'default' => 30,
+			'default' => '',
 			'transport' => 'postMessage',
 			'sanitize_callback' => '',
 			'type' => 'option'
@@ -398,7 +398,7 @@ function awqv_customize_register( $wp_customize ) {
       'awqv_cart_button_bg', //give it an ID
       array(
 		'transport' => 'postMessage',
-        'default' => '#111', // Give it a default
+        'default' => '#111111', // Give it a default
 		'sanitize_callback' => 'sanitize_hex_color',
 		'type' => 'option'
 
@@ -422,7 +422,7 @@ function awqv_customize_register( $wp_customize ) {
       'awqv_view_cart_button_bg', //give it an ID
       array(
 		'transport' => 'postMessage',
-        'default' => '#111', // Give it a default
+        'default' => '#111111', // Give it a default
 		'sanitize_callback' => 'sanitize_hex_color',
 		'type' => 'option'
 

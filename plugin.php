@@ -203,9 +203,9 @@ class Awqv_Lite_front
 					var owl;
 					owl = jQuery(".slider").owlCarousel({
 						items:1,
-						smartSpeed:1200,
-						dots:<?php echo get_option('awqv_slider_dot_switch', '') ? 'true' : 'false'; ?>,
-						nav:<?php echo get_option('awqv_slider_nav_switch', '') ? 'true' : 'false'; ?>,
+						smartSpeed:1100,
+						dots:<?php echo get_option('awqv_slider_dot_switch', 'true') ? 'true' : 'false'; ?>,
+						nav:<?php echo get_option('awqv_slider_nav_switch', 'true') ? 'true' : 'false'; ?>,
 						lazyLoad :true,
 						navText: ["<i class='<?php echo get_option('awqv_slider_prev_icon', ''); ?>'></i>", "<i class='<?php echo get_option('awqv_slider_next_icon', ''); ?>'></i>"]
 					});
