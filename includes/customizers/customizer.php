@@ -296,7 +296,27 @@ function awqv_customize_register( $wp_customize ) {
 			'awqv-icon-eye-outline'	=> __('awqv-icon-eye-outline','awqv'),
 		)
 	)));
-
+	
+	$wp_customize->add_setting(
+      'awqv_action_button_bg', //give it an ID
+      array(
+		'transport' => 'postMessage',
+        'default' => '#111111', // Give it a default
+		'sanitize_callback' => 'sanitize_hex_color',
+		'type' => 'option'
+      )
+	);
+	$wp_customize->add_control(
+     new WP_Customize_Color_Control(
+         $wp_customize,
+         'awqv_action_button_bg', //give it an ID
+         array(
+             'label'      => __( 'Button Background', 'awqv' ), 
+             'section'    => 'awqv_general_section',  
+             'settings'   => 'awqv_action_button_bg'
+         )
+    )
+  );
 	
   /** 
 	************** Close Icon Color ************** 

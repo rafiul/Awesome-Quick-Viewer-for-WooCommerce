@@ -62,7 +62,13 @@
     value.bind(function (to) {
       $(".open-modal").text(to);
     });
-  }); 
+  });
+  wp.customize("awqv_action_button_bg", function (value) {
+    value.bind(function (to) {
+      $(".open-modal").css("background", to);
+    });
+  });
+  
    //===Animation Section ====
   wp.customize("qv_animation", function (value) {
     value.bind(function (to) {

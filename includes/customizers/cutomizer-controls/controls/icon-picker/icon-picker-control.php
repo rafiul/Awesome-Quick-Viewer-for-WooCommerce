@@ -26,7 +26,7 @@ function awqv_add_icon_picker_control( $wp_customize ) {
 
 		public function render_content() {
 			if ( empty( $this->choices ) ) {
-				require_once awqv_dir() . '/icon-picker/inc/awqv-icons.php';
+				require_once Awqv_Lite_Plugin::awqv_dir() . '/icon-picker/inc/awqv-icons.php';
 				$this->choices = awqv_icon_list();
 			}
 		?>

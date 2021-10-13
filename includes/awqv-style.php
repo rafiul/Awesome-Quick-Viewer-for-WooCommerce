@@ -69,6 +69,9 @@ function awqv_custom_css_output() {
 		.qv-description p.price {
 			color: <?php echo esc_attr(get_option( 'awqv_product_price_color', '' ));?>;
 		}
+		button.open-modal {
+			background-color: <?php echo esc_attr(get_option( 'awqv_action_button_bg', '' ));?>;
+		}
   </style>
 <?php }
 add_action( 'wp_head', 'awqv_custom_css_output');
