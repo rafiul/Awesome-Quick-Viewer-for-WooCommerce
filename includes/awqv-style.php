@@ -35,7 +35,8 @@ function awqv_custom_css_output() {
 		  color: <?php echo esc_attr(get_option( 'awqv_icon_color', '' ));?>
 	  }
 	  .woocommerce .qv-col span.onsale{
-		  background: <?php echo esc_attr(get_option( 'awqv_sale_flash_bg', '' ));?>
+		  background: <?php echo esc_attr(get_option( 'awqv_sale_flash_bg', '' )); ?>;
+		  border: 1px solid;
 	  }
 	  .woocommerce .qv-description button.button.alt, 
 	  .woocommerce-cart .qv-description button.button.alt{
