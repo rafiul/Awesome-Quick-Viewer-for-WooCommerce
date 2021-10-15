@@ -1,7 +1,7 @@
 === Awesome Quick Viewer for WooCommerce Lite  ===
 Contributors: tbyte,rafiul17
 Donate link: https://www.paypal.com/donate?hosted_button_id=ZC2N2PY77T9HL
-Tags: WooCommerce, quick view,viewer,free quick view, ProductsQuickView
+Tags: WooCommerce, quick view,free quick view, Products Quick View, product view
 Requires at least: 5.0
 Tested up to: 5.8
 Stable tag: 1.0
@@ -12,6 +12,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 Awesome Quick Viewer for WooCommerce is a lightweight WooCommerce based plugin. An user can easily view a product without redirection. Advance slider used for navigating gallery products if they exist. Tons of options and live customizable.
+Go to Appearance > Customize > Quick View Settings
+[Demo: https://themesbyte.com/quick-viewer](https://themesbyte.com/quick-viewer/)
+
 
 
 == Features ==

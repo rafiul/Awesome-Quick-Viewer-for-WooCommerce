@@ -2,7 +2,7 @@
 /**
  * Quick view image template.
  *
- * @package Awesome Quick Viewr WordPress Plugin
+ * @package awesome_quick_viwer
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -54,7 +54,7 @@ global $post, $product, $woocommerce; ?>
 					}
 				}
 			} else {
-				echo sprintf( '<div><img src="%s" alt="%s" /></div>', wc_placeholder_img_src(), __( 'Placeholder', 'oceanwp' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo sprintf( '<div><img src="%s" alt="%s" /></div>', wc_placeholder_img_src(), __( 'Placeholder', 'awqv' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 			?>
 	</div>

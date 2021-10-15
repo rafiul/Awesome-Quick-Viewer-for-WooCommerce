@@ -34,26 +34,26 @@ if (!function_exists('activate_awqv_lite'))
         set_transient('awqv-lite-thankyou-notice', true, 5);
     }
 }
-
+//Activation Hook
 register_activation_hook(__FILE__, 'activate_awqv_lite');
 
-add_action('admin_notices', 'awqv_lite_thankyou_notice');
 function awqv_lite_thankyou_notice()
 {
-    if (get_transient('awqv-lite-thankyou-notice'))
-    {
-        $msg_title = 'Awesome Quick Viewer for WooCommerce Lite';
-        $msg_text = 'Deactivated Awesome Quick Viewer for WooCommerce Pro while Lite is Activate.';
-        $settings = '<a class="button button-primary" href="'.wp_customize_url().'">Settings</a>';
+	if (get_transient('awqv-lite-thankyou-notice'))
+	{
+		$msg_title 	= 'Awesome Quick Viewer for WooCommerce Lite';
+		$msg_text 	= 'Deactivated Awesome Quick Viewer for WooCommerce Pro while Lite is Activate.';
+		$settings 	= '<a class="button button-primary" href="'.wp_customize_url().'">Settings</a>';
 ?>
 		<div class="updated is-dismissible aep-notice">
 			<?php echo sprintf(__('<p>Thank you for using <strong>%s</strong>! 
 			<strong>%s</strong></p><p>%s</p>', 'awqv' ),$msg_title, $msg_text, $settings); ?>
 		</div>
   <?php
-        delete_transient('awqv-admin-notice');
-    }
+		delete_transient('awqv-lite-thankyou-notice');
+	}
 }
+
 //Plugin Init Class
 class Awqv_Lite_Plugin
 {
@@ -76,7 +76,7 @@ class Awqv_Lite_Plugin
 		//Load Main
         $this->awqv_load();
 		// Initialize the filter hooks.
-		$this->init_filters();
+		$this->action_link_filters();
     }
 	
     /**
@@ -130,7 +130,7 @@ class Awqv_Lite_Plugin
 	/**
 	 * Add plugin action Filter
 	 */
-	public function init_filters() {
+	public function action_link_filters() {
 		add_filter( 'plugin_action_links', array( $this, 'awqv_plugin_action_links' ), 10, 2 );
 	}
 	/**
