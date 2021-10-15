@@ -58,7 +58,6 @@ function awqv_lite_thankyou_notice()
 class Awqv_Lite_Plugin
 {
     public $version = '1.0';
-	static $plugin;
 
     function __construct()
     {
@@ -195,7 +194,6 @@ class Awqv_Lite_Plugin
         {
             require_once AWQV_DIR . '/plugin.php';
             require_once AWQV_DIR . '/includes/admin-notice/class-admin-notice.php';
-            require_once ($this->awqv_dir() . '/icon-picker/icon-picker-control.php');
             require_once AWQV_INC_DIR . '/customizers/customizer.php';
             require_once AWQV_INC_DIR . '/awqv-style.php';
         }

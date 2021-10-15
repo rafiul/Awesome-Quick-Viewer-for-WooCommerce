@@ -1,7 +1,7 @@
 <?php
  
-function awqv_add_icon_picker_control( $wp_customize ) {
-	class awqv_Customizer_Icon_Picker_Control extends WP_Customize_Control {
+if (class_exists('WP_Customize_Control')) {
+	class awqv_Customizer_Icon_Picker_Control extends \WP_Customize_Control {
 
 		public $type = 'awqv-icon-picker';
 
@@ -46,7 +46,5 @@ function awqv_add_icon_picker_control( $wp_customize ) {
 		<?php }
 
 	}
-	
 }
 
-add_action( 'customize_register', 'awqv_add_icon_picker_control' );

@@ -4,6 +4,7 @@ function awqv_customize_register( $wp_customize ) {
 	require_once ( Awqv_Lite_Plugin::awqv_dir(). '/separator-control/class-separator-control.php' );
 	require_once ( Awqv_Lite_Plugin::awqv_dir(). '/upsell-inner-section-control/class-upsell-inner-section-control.php' );
 	require_once ( Awqv_Lite_Plugin::awqv_dir(). '/slider-range-control/class-slider-range-control.php' );
+	require_once ( Awqv_Lite_Plugin::awqv_dir() . '/icon-picker/icon-picker-control.php');
 	require_once ( Awqv_Lite_Plugin::awqv_dir(). '/customizer-animation.php' );
 	require_once ( Awqv_Lite_Plugin::awqv_dir(). '/customizer-slider.php' );
 	
