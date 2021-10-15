@@ -147,7 +147,7 @@ class Awqv_Lite_Plugin
 
 			array_unshift( $links, $new_links );
 
-			//$links['go_pro'] = sprintf( '<a target="_blank" href="%1$s" style="color: #00be28; font-weight: 700;">Go Premium!</a>', '#' );
+			$links['go_pro'] = sprintf( '<a target="_blank" href="%1$s" style="color: #00be28; font-weight: 700;">Go Premium!</a>', 'https://themesbyte.com/quick-viewer/?add-to-cart=3036' );
 		}
 
 		return $links;

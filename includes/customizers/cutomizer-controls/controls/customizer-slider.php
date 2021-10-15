@@ -8,7 +8,7 @@
 	   'section' => 'awqv_slider_section',
 	   'label'   => 'Premium Controls',
 	   'priority'   => 1,
-	   'url' 		=> '#',
-	   'background'	=> '#2bd420',
+	   'url' 		=> 'https://themesbyte.com/quick-viewer/?add-to-cart=3036',
+	   'background'	=> '#22b147',
 	)));
  ?>
