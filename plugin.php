@@ -114,7 +114,7 @@ class Awqv_Lite_front
         $icon = get_option('awqv_icon_picker', '');
         $close_container = ($icon == 'default') ? '<div class="wg-modal-close">&times;</div>' : '<div class="wg-modal-close"><i class="' . $icon . '"></i></div>';
 
-        echo '<div id="my-modal" class="my-modal">
+        echo '<div id="my-modal" class="my-modal" style="display:none">
 			' . $close_container . '
 			<div id="modal_container"></div>
 		</div>';
@@ -179,6 +179,7 @@ class Awqv_Lite_front
 		<script>
 			jQuery(".open-modal").click(function () {
 			var $id =  jQuery(this).data('id');
+			jQuery("#my-modal").show();
 			jQuery(this).append('<div class="loader-wrap"><div id="loader"></div></div>');
 			
 			jQuery.ajax({
