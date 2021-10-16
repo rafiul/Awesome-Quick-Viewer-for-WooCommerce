@@ -132,11 +132,11 @@ class Awqv_Lite_front
     public function awqv_woocommerce_ajax_add_to_cart()
     {
 
-        $product_id = apply_filters('woocommerce_add_to_cart_product_id', absint($_POST['product_id']));
-        $quantity = empty($_POST['quantity']) ? 1 : wc_stock_amount($_POST['quantity']);
-        $variation_id = absint($_POST['variation_id']);
-        $passed_validation = apply_filters('woocommerce_add_to_cart_validation', true, $product_id, $quantity);
-        $product_status = get_post_status($product_id);
+        $product_id 		= apply_filters('woocommerce_add_to_cart_product_id', absint($_POST['product_id']));
+        $quantity 			= empty($_POST['quantity']) ? 1 : wc_stock_amount($_POST['quantity']);
+        $variation_id 		= absint($_POST['variation_id']);
+        $passed_validation 	= apply_filters('woocommerce_add_to_cart_validation', true, $product_id, $quantity);
+        $product_status 	= get_post_status($product_id);
 
         if ($passed_validation && WC()
             ->cart
@@ -197,6 +197,7 @@ class Awqv_Lite_front
 						},
 						onAfterClose: function (e) {
 							jQuery('body').css('overflow','auto');
+							jQuery("#my-modal").hide();
 						},
 					});
 					modal.openModal();
